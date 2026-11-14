@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+Sitemap: https://ais-pre-fozokzlcuuguukxe3vvqi5-961689763907.asia-southeast1.run.app/sitemap.xml

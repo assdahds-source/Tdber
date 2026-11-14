@@ -1,0 +1,6 @@
+{
+  "name": "مركز تدبير — ضاحية مويلح، الشارقة",
+  "description": "الموقع الرسمي لمركز تدبير لخدمات العمالة المنزلية في ضاحية مويلح (شارع 55)، إمارة الشارقة. باقات معتمدة بأسعار شفافة بالدرهم الإماراتي وسياسات متوافقة مع Google Search Console و Google Merchant Center.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
