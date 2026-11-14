@@ -1,3 +1,8 @@
+import heroLobbyImg from '../assets/images/hero_tadbeer_center_1794678787191.jpg';
+import consultationRoomImg from '../assets/images/service_consultation_room_1794678788126.jpg';
+import villaInteriorImg from '../assets/images/service_villa_interior_1794678788237.jpg';
+import muwailehExteriorImg from '../assets/images/muwaileh_sharjah_exterior_1794678788707.jpg';
+
 export type PageRoute =
   | '/'
   | '/services'
@@ -45,7 +50,7 @@ export const DEFAULT_BUSINESS_PROFILE: BusinessProfile = {
   phone: '+971 6 544 0055',
   whatsapp: '+971 50 544 0055',
   email: 'info@tadbeer-muwaileh.ae',
-  domain: 'https://ais-pre-fozokzlcuuguukxe3vvqi5-961689763907.asia-southeast1.run.app',
+  domain: typeof window !== 'undefined' ? window.location.origin : 'https://tadbeer-muwaileh.netlify.app',
   workingHours: '09:00 صباحاً – 09:00 مساءً',
   workingHoursDays: 'السبت إلى الخميس (الجمعة: 02:00 ظهراً – 09:00 مساءً)',
   licenseReference: 'مركز خدمات عمالة مساعدة مرخص — الشارقة',
@@ -54,10 +59,10 @@ export const DEFAULT_BUSINESS_PROFILE: BusinessProfile = {
 };
 
 export const GENERATED_IMAGES = {
-  heroLobby: '/src/assets/images/hero_tadbeer_center_1794678787191.jpg',
-  consultationRoom: '/src/assets/images/service_consultation_room_1794678788126.jpg',
-  villaInterior: '/src/assets/images/service_villa_interior_1794678788237.jpg',
-  muwailehExterior: '/src/assets/images/muwaileh_sharjah_exterior_1794678788707.jpg',
+  heroLobby: heroLobbyImg,
+  consultationRoom: consultationRoomImg,
+  villaInterior: villaInteriorImg,
+  muwailehExterior: muwailehExteriorImg,
 };
 
 export type PackageCategory = 'all' | 'traditional' | 'flexible' | 'residency';

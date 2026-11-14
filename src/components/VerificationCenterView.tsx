@@ -245,6 +245,12 @@ export const VerificationCenterView: React.FC<VerificationCenterViewProps> = ({
                     <span className="font-mono text-xs">LocalBusiness JSON-LD</span>.
                   </span>
                 </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-[#047857] mt-1 shrink-0" />
+                  <span>
+                    جاهز للنشر على <strong>Netlify</strong> عبر <span className="font-mono text-xs">netlify.toml</span> و <span className="font-mono text-xs">_redirects</span> ودعم <span className="font-mono text-xs">Netlify Forms</span>.
+                  </span>
+                </li>
               </ul>
             </div>
 

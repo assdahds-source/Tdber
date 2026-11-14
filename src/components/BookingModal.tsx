@@ -44,7 +44,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const vatAmount = Math.round(currentPkg.priceAed * currentPkg.vatRate);
   const totalAmount = currentPkg.priceAed + vatAmount;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (clientName.trim().length < 3) {
       setErrorMsg('يرجى إدخال الاسم الكامل بشكل صحيح.');
@@ -64,6 +64,28 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       return;
     }
     setErrorMsg('');
+
+    try {
+      const body = new URLSearchParams({
+        'form-name': 'service-booking',
+        packageTitle: currentPkg.title,
+        packageSku: currentPkg.sku,
+        totalAmountAed: String(totalAmount),
+        clientName,
+        clientPhone,
+        clientEmail,
+        emirate,
+        paymentMethod,
+      });
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+    } catch {
+      // Graceful fallback when previewed outside Netlify Forms runtime
+    }
+
     setOrderReference(`ORD-${Math.floor(100000 + Math.random() * 900000)}`);
   };
 

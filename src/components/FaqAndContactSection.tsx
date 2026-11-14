@@ -25,7 +25,7 @@ export const FaqAndContactSection: React.FC<FaqAndContactSectionProps> = ({
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submittedRef, setSubmittedRef] = useState<string | null>(null);
 
-  const validateAndSubmit = (e: React.FormEvent) => {
+  const validateAndSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const nextErrors: { [key: string]: string } = {};
 
@@ -48,6 +48,24 @@ export const FaqAndContactSection: React.FC<FaqAndContactSectionProps> = ({
 
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
+
+    try {
+      const body = new URLSearchParams({
+        'form-name': 'consultation-request',
+        fullName,
+        phone,
+        email,
+        selectedService,
+        notes,
+      });
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+    } catch {
+      // Graceful fallback when previewed outside Netlify Forms runtime
+    }
 
     const refCode = `TDB-${Math.floor(100000 + Math.random() * 900000)}`;
     setSubmittedRef(refCode);

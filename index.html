@@ -119,6 +119,24 @@
     </script>
   </head>
   <body class="bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-[#047857]/15 selection:text-[#047857]">
+    <!-- Netlify Forms build-time detection stubs -->
+    <form name="consultation-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="selectedService" />
+      <textarea name="notes"></textarea>
+    </form>
+    <form name="service-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="packageTitle" />
+      <input type="text" name="packageSku" />
+      <input type="text" name="totalAmountAed" />
+      <input type="text" name="clientName" />
+      <input type="tel" name="clientPhone" />
+      <input type="email" name="clientEmail" />
+      <input type="text" name="emirate" />
+      <input type="text" name="paymentMethod" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
